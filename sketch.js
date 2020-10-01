@@ -61,6 +61,9 @@ if(gameState === 3){
   form.location.hide();
   form.submit.hide();
   text("Thanks for posting the query!", 300,400)
+  textSize(18);
+  text("Your complaint has been lodged to the concerned department.", 250,450)
+  text("You will be getting regular updates on the status of the complaint.", 250,500)
 }
 //myCheckedEvent();
 }
