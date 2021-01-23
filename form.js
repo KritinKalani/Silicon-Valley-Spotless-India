@@ -1,7 +1,9 @@
 class Form{
     constructor(){
         this.button6 = createButton("Environment Department")
+        this.button7 = createButton("Other Complaints")
         //this.button1 = createButton("Forest Department")
+        this.button1 = createButton("Home")
         this.button2 = createButton("Energy/Electric Department")
         //this.button3 = createButton("Labor Department")
         this.button4 = createButton("Cleanliness Department")
@@ -37,11 +39,13 @@ this.checkbox5.hide;
     }
     display(){
 //this.button1.position(10,100)
-this.button2.position(10,150)
+this.button1.position(20,100)
+this.button2.position(20,150)
 //this.button3.position(10,200)
-this.button4.position(10,250)
-this.button5.position(10,300)
-this.button6.position(10,200)
+this.button4.position(20,250)
+this.button5.position(20,300)
+this.button6.position(20,200)
+this.button7.position(20,350)
 
 /* this.button1.mousePressed(()=>{
     this.button = createButton("Post Query");
@@ -231,6 +235,11 @@ this.button6.mousePressed(()=>{
         this.checkbox3.hide();
         this.location.hide();
         this.checkbox3 = createCheckbox('GPS', false);
+        if(this.checkbox3.checked === true){
+            alert("Spotless India wants to access GPS")
+        }
+        
+    
     this.checkbox3.position(400,100)
     this.location = createInput("Enter Location Manually");
     this.location.position(400,150);
@@ -263,6 +272,56 @@ this.checkbox5.position(500,200)
 //this.checkbox2 = createCheckbox('')
 /*     this.checkbox = createCheckbox('label', false);
 this.checkbox.position(500,500) */
+})
+
+this.button7.mousePressed(()=>{
+    gameState = 1;
+    this.button = createButton("Post Query");
+    this.button.position(550,620);
+    this.input = createInput("Enter photo/complaint here")
+    this.input.position(500,600)
+    this.button.mousePressed(()=>{
+        gameState = 2;
+        this.checkbox3.hide();
+        this.location.hide();
+        this.checkbox3 = createCheckbox('GPS', false);
+        if(this.checkbox3.checked === true){
+            alert("Spotless India wants to access GPS")
+        }
+        
+    
+    this.checkbox3.position(400,100)
+    this.location = createInput("Enter Location Manually");
+    this.location.position(400,150);
+    this.submit = createButton("Submit");
+    this.submit.position(450,180);
+    this.submit.mousePressed(()=>{
+        gameState = 3;
+        })
+    })
+    this.checkbox.hide();
+    this.checkbox1.hide();
+    this.checkbox2.hide();
+    this.checkbox4.hide();
+    this.checkbox5.hide();
+    this.checkbox6.hide();
+    this.checkbox7.hide();
+})
+
+this.button1.mousePressed(()=>{
+    this.checkbox.hide();
+    this.checkbox1.hide();
+    this.checkbox2.hide();
+    this.checkbox3.hide();
+    this.checkbox4.hide();
+    this.checkbox5.hide();
+    this.checkbox6.hide();
+    this.checkbox7.hide();
+    this.input.hide();
+    this.submit.hide();
+    this.location.hide();
+    this.button.hide();
+    gameState = 0;
 })
     }
 }

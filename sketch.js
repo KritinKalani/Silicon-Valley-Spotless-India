@@ -7,6 +7,7 @@ var boxes;
 var box1, box2, box3, box4, box5, box6;
 var form;
 var gameState;
+var icon;
 
 function setup(){
   createCanvas(1000,800);
@@ -19,20 +20,22 @@ function setup(){
 //box6 = createSprite(25,175,100,30);
 form = new Form();
 gameState = 0;
+icon = new Icon()
 }
 
 function draw(){
   background(0,144,158)
   textFont("Georgia");
   textSize(30);
-text("Spotless India!", 450,30);
+text("Spotless India!", 450,50);
+icon.display();
   form.display();
   line(210,0,210,1000);
   if(gameState === 0){
     textSize(20);
     textFont("Times New Roman");
-    text("Welcome to Spotless India!",400, 400)
-    text("If you have any queries relating to the government, please put them here!", 280,450);
+    text("Welcome to Spotless India!",425, 300)
+    text("If you have any complaints relating to the government, please put them here!", 280,350);
     //drawSprites();
 }
 if(gameState === 1){
@@ -60,10 +63,10 @@ if(gameState === 3){
   form.checkbox3.hide();
   form.location.hide();
   form.submit.hide();
-  text("Thanks for posting the query!", 300,400)
+  text("Thanks for posting the query!", 400,300)
   textSize(18);
-  text("Your complaint has been lodged to the concerned department.", 250,450)
-  text("You will be getting regular updates on the status of the complaint.", 250,500)
+  text("Your complaint has been lodged to the concerned department.", 325,350)
+  text("You will be getting regular updates on the status of the complaint.", 325,400)
 }
 //myCheckedEvent();
 }
